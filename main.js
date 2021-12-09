@@ -6,9 +6,8 @@
  * @fecha: 25/11/2021
  *
  * History:
- *  - v1.0.1 – Desafio Clase 1
+ *  - v1.0.1 – Primera entrega
  *  - v1.0.2 – Correccion de nombre de variable.
- *  - v1.0.3 – Ciclo for - lista de invitados. 
  */
 // Código de aquí en adelante
 
@@ -29,12 +28,55 @@
 
 // Desafio clase-3------------------------------------------------
 
+// let invitados= "";
 
-let invitados= "";
+// for (let i = 0; i < 5; i++){
+//     invitados += prompt ("Ingresa nombres de invitados") + "\n";
+// }
+// alert("Los invitados son: " + invitados);
 
-for (let i = 0; i < 5; i++){
-    invitados += prompt ("Ingresa nombres de invitados") + "\n";
+
+// Desafio clase-4  ------------------------------------------------
+
+// let user  = prompt("Ingresa tu nombre de usuario");
+
+// function descuento(precio, porcentaje){
+//     return precio - ((precio * porcentaje) /100)
+// }
+// for (let index = 0; index < 2; index++) {
+//     let resultado = descuento (parseFloat(prompt("Hola " + user+ " ingresa el precio "))
+//     ,parseFloat(prompt("Ingresa el descuento de tu cupón")));
+    
+
+    
+//     alert(user + "el precio sin iva es " + resultado);
+// }
+
+
+
+
+// Desafio clase 5----------------------------------------------
+
+
+class Reserva {
+        constructor(nombre, edad,comensales) {
+            this.nombre = nombre;
+            this.edad = edad;
+            this.comensales = comensales;
+        }
+
 }
-alert("Los invitados son: " + invitados);
+
+let ingreso = '';
+for ( i =0; i < 3; i++) {
+    let reserva = new Reserva(prompt("ingresa tu nombre"),
+                              parseInt(prompt("edad")),
+                              parseInt(prompt("Para cuantas personas es la reserva")));
+
+   ingreso+= "Reserva: "+reserva.nombre+" "+
+             "Edad: "   +reserva.edad+""+
+             "Comensales: " +reserva.comensales+"\n";
+}
+alert(ingreso);
 
 
