@@ -52,31 +52,59 @@
 //     alert(user + "el precio sin iva es " + resultado);
 // }
 
+// let ingreso = '';
+// for ( i =0; i < 3; i++) {
+// let reserva = new Reserva(prompt("ingresa tu nombre"),
+//                           parseInt(prompt("edad")),
+//                           parseInt(prompt("Para cuantas personas es la reserva")));
 
+
+// ingreso+= "Reserva: "+reserva.nombre+" "+
+//          "Edad: "   +reserva.edad+""+
+//          "Comensales: " +reserva.comensales+"\n";
+// }
+// alert(ingreso);
 
 
 // Desafio clase 5----------------------------------------------
 
 
+
+
+
+
 class Reserva {
-        constructor(nombre, edad,comensales) {
+        constructor(nombre, edad, comensales) {
             this.nombre = nombre;
             this.edad = edad;
             this.comensales = comensales;
         }
-
 }
 
-let ingreso = '';
-for ( i =0; i < 3; i++) {
-    let reserva = new Reserva(prompt("ingresa tu nombre"),
-                              parseInt(prompt("edad")),
-                              parseInt(prompt("Para cuantas personas es la reserva")));
 
-   ingreso+= "Reserva: "+reserva.nombre+" "+
-             "Edad: "   +reserva.edad+""+
-             "Comensales: " +reserva.comensales+"\n";
+const reservas = [];
+
+reservas.push(new Reserva("EDUARDO", 34, 6));
+reservas.push(new Reserva("MARTIN", 18, 3));
+reservas.push(new Reserva("VICTORIANO", 56, 3));
+reservas.push(new Reserva("ELVIRA", 43, 4));
+
+
+
+console.log(reservas);
+
+
+function buscarReserva(reser, user){
+    return reser.find(objeto => objeto.nombre === user.toUpperCase());
 }
-alert(ingreso);
+for (let index = 0; index < 3; index++) {
+    let busqueda = buscarReserva(reservas, prompt('INGRESAR NOMBRE DE RESERVA'));
+    if(busqueda != undefined){
+        alert('Reserva:  '+busqueda.nombre+"\n" +'Mesa para: '+busqueda.comensales + " personas" + "\n" + 'Edad: '+busqueda.edad+ " años");
+    }else{
+        alert('NO EXISTE LA RESERVA');
+    }
+}
+
 
 
