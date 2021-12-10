@@ -81,6 +81,18 @@ class Reserva {
         }
 }
 
+let ingreso = '';
+    for ( i =0; i < 2; i++) {
+        let reserva = new Reserva(prompt("ingresa tu nombre"),
+                          parseInt(prompt("edad")),
+                          parseInt(prompt("Para cuantas personas es la reserva")));
+
+
+ingreso+= "Reserva: " +reserva.nombre +"\n"+
+         "Edad: " +reserva.edad+ "\n"+
+         "Comensales: " +reserva.comensales+"\n";
+}
+console.log(ingreso);
 
 const reservas = [];
 
